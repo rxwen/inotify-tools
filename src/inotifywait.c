@@ -298,7 +298,8 @@ int main(int argc, char ** argv)
 	}
 
 	// now watch files
-	for ( int i = 0; list.watch_files[i]; ++i ) {
+    int i = 0;
+	for ( i = 0; list.watch_files[i]; ++i ) {
 		char const *this_file = list.watch_files[i];
 		if ( (recursive && !inotifytools_watch_recursively_with_exclude(
 		                        this_file,

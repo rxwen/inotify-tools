@@ -141,7 +141,8 @@ int main(int argc, char ** argv)
 	unsigned int num_watches = 0;
 	unsigned int status;
 	fprintf( stderr, "Establishing watches...\n" );
-	for ( int i = 0; list.watch_files[i]; ++i ) {
+    int i = 0;
+	for ( i = 0; list.watch_files[i]; ++i ) {
 		char const *this_file = list.watch_files[i];
 		if ( recursive && verbose ) {
 			fprintf( stderr, "Setting up watch(es) on %s\n", this_file );

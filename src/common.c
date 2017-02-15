@@ -74,6 +74,7 @@ FileList construct_path_list( int argc, char ** argv, char const * filename ) {
 	int exclude_len = LIST_CHUNK;
 	int watch_count = 0;
 	int exclude_count = 0;
+    int i = 0;
 	list.watch_files = (char const **)malloc(sizeof(char *)*watch_len);
 	list.exclude_files = (char const **)malloc(sizeof(char *)*exclude_len);
 
@@ -93,7 +94,7 @@ FileList construct_path_list( int argc, char ** argv, char const * filename ) {
 	}
 	if ( file && file != stdin) fclose(file);
 
-	for ( int i = 0; i < argc; ++i ) {
+	for ( i = 0; i < argc; ++i ) {
 		if ( strlen(argv[i]) == 0 ) continue;
 		if ( '@' == argv[i][0] && strlen(argv[i]) == 1 ) continue;
 		if ( '@' == argv[i][0] ) {
